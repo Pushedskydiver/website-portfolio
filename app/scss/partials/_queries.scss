@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #MEDIA-QUERIES
+\*------------------------------------*/
+
+/* Large Screen Phones */
+@media (min-width: 400px) {
+
+}
+
+/* Small Screen Tabelts */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium Screen Tablets */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screen Tablets - Laptop - Desktop */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

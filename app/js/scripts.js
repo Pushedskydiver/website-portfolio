@@ -98,17 +98,6 @@
     }
 
 
-    // ==============================================
-    //    Tool tips
-    // ==============================================
-  	function init_tool_tips() {
-      var $tooltip = $('[data-toggle="tooltip"]');
-      	if ( $tooltip.length > 0 ) {
-      		$tooltip.tooltip();
-    	}
-  	}
-
-
     // ======================================
     //    Mobile navigation
     // ======================================
@@ -151,98 +140,6 @@
       	if (bool === true) $('.site-nav').slideDown();
       	else $('.site-nav').slideUp();
       }
-    }
-
-
-    // ==============================================
-    //    Mobile submenu
-    // ==============================================
-    function init_mobile_sub() {
-      // Mobile Submenu
-    	var $hasSubmenu = $('.has-sub > span', '.site-nav');
-    	$hasSubmenu.on('click', function(){
-    		$(this).parent().toggleClass('open').find('.sub-menu').toggleClass('expanded');
-    	});
-    }
-
-
-    // ==============================================
-    //    Desktop submenu
-    // ==============================================
-    function init_sub_menu() {
-      // Submenu Dropdown
-    	var $dropdown = $('.has-sub');
-    	$dropdown.on('mouseover', function(){
-    		$(this).addClass('active');
-    	});
-    	$dropdown.on('mouseout', function(){
-    		$(this).removeClass('active');
-    	});
-    }
-
-
-    // ==============================================
-    //    Search form expand (Navbar)
-    // ==============================================
-  	function init_search() {
-      var $searchToggle = $('.search-btn > svg');
-    	$searchToggle.on('click', function(){
-    		$(this).parent().find('.search-box').addClass('open');
-    	});
-    	$('.search-btn').on('click', function(e) {
-        e.stopPropagation();
-    	});
-    	$(document).on('click', function(e) {
-    		$('.search-box').removeClass('open');
-    	});
-  	}
-
-
-    // ==============================================
-    //    Sharing expand (Navbar)
-    // ==============================================
-  	function init_share() {
-      var $shareToggleI = $('.share-btn > svg'),
-    			$shareToggle = $('.share-btn, .navbar');
-    	$shareToggleI.on('click', function(){
-    		$(this).parent().toggleClass('active').find('.dropdown').toggleClass('expanded');
-    	});
-    	$shareToggle.on('click', function(e) {
-        e.stopPropagation();
-    	});
-    	$(document).on('click', function(e) {
-    		$shareToggle.removeClass('active').find('.dropdown').removeClass('expanded');
-    	});
-  	}
-
-
-    // ==============================================
-    //    Layer Parallax Effect
-    // ==============================================
-    function init_layer_parallax() {
-      // Layer Parallax Effect
-      // Phone Screens Parallax / Tablet Parallax
-      var $layerParallax = $('.layer-parallax');
-  		if ( ! Modernizr.touch ) {
-  			if ( $layerParallax.length > 0 ) {
-  		    $layerParallax.parallax();
-  			}
-  		}
-    }
-
-
-    // ==============================================
-    //    Slick slider | Home page
-    // ==============================================
-    function init_slick_slider() {
-      $('.slick-slider').slick({
-        dots: true,
-        fade: true,
-        appendArrows: $('.hero-nav .inner'),
-        prevArrow: '<button type="button" class="slick-prev"><svg class="svg--angle-left-dims"><use xlink:href="dist/images/icons/sprite.svg#angle-left"></use></svg></button>',
-        nextArrow: '<button type="button" class="slick-next"><svg class="svg--angle-right-dims"><use xlink:href="dist/images/icons/sprite.svg#angle-right"></use></svg></button>',
-        mobileFirst: true
-      });
     }
 
 
@@ -314,19 +211,12 @@
     init_dummy_link();
     init_scroll_to();
     init_smooth_scroll_top();
-    init_search();
-    init_share();
-    init_slick_slider();
     init_contact();
 
     if (!$('init_mobile_nav').hasClass('desktop')) {
       init_mobile_nav();
-      init_mobile_sub();
     }
     if (!$('body').hasClass('mobile')) {
-      init_sub_menu();
-      init_tool_tips();
-      init_layer_parallax();
       init_wow();
     }
 
