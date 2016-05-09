@@ -1,0 +1,266 @@
+main.site-main {
+
+  section.title-banner {
+    background: $quinary-color;
+    padding: 60px 0;
+    text-align: center;
+
+    h2 {
+      color: $tertiary-color;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+
+  section.site-about {
+
+    .about-info {
+      background: $secondary-color url('../images/white-overlay.png');
+      color: $tertiary-color;
+      padding: 30px;
+
+      h3 {
+        color: $senary-color;
+        font-weight: 400;
+      }
+
+      p {
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        display: inline-flex;
+        position: relative;
+        @include flex-row;
+        @include flex-align-center;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $senary-color;
+          @include transition-03;
+          z-index: 0;
+        }
+
+        span {
+          display: inline-block;
+          position: relative;
+          color: $secondary-color;
+          font-weight: 600;
+          padding: 12px;
+          vertical-align: middle;
+        }
+
+        svg {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          fill: $secondary-color;
+          padding: 6px;
+        }
+      }
+    }
+  }
+
+  section.site-skills {
+    position: relative;
+    padding: 60px 0;
+
+    input.knob {
+      width: 91px;
+      height: 58px;
+      position: absolute;
+      vertical-align: middle;
+      margin-top: 58px;
+      margin-left: -133px;
+      border: 0px;
+      background-image: none;
+      font-weight: bold;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-size: 35px;
+      line-height: normal;
+      font-family: Arial;
+      text-align: center;
+      color: rgb(255, 43, 66);
+      padding: 0px;
+      -webkit-appearance: none;
+      background-position: initial initial;
+      background-repeat: initial initial;
+    }
+  }
+
+  section.site-portfolio {
+    background: $secondary-color url('../images/white-overlay.png');
+    padding: 60px 0;
+
+    .portfolio-inner {
+
+      h2 {
+        color: $quaternary-color;
+      }
+
+      .portfolio-filter {
+        @include flex;
+        @include flex-row;
+        @include flex-justify-center;
+        margin-bottom: 20px;
+
+        button {
+          background: $tertiary-color;
+          color: $secondary-color;
+          padding: 10px 16px;
+          margin: 0;
+          border-right: 1px solid $quaternary-color;
+          @include transition-03;
+
+          &:last-child {
+            border-right: none;
+          }
+
+          &.is-checked {
+            background: $senary-color;
+            color: $secondary-color;
+          }
+        }
+      }
+
+      .grid {
+
+        .grid-item {
+          width: 100%;
+          overflow: hidden;
+
+          img {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+               -moz-transform: translate3d(0px, 0px, 0px);
+                -ms-transform: translate3d(0px, 0px, 0px);
+                 -o-transform: translate3d(0px, 0px, 0px);
+                    transform: translate3d(0px, 0px, 0px);
+
+            @include transition-03;
+          }
+
+          &:active {
+
+            img {
+              opacity: 0.4;
+              -webkit-transform: translate3d(0px, -55px, 0px);
+                 -moz-transform: translate3d(0px, -55px, 0px);
+                  -ms-transform: translate3d(0px, -55px, 0px);
+                   -o-transform: translate3d(0px, -55px, 0px);
+                      transform: translate3d(0px, -55px, 0px);
+            }
+
+            .portfolio-info {
+              -webkit-transform: translateY(0px);
+                 -moz-transform: translateY(0px);
+                  -ms-transform: translateY(0px);
+                   -o-transform: translateY(0px);
+                      transform: translateY(0px);
+
+              &::before {
+                width: 80%;
+              }
+
+              .link-icons {
+
+                svg {
+                  fill: $secondary-color;
+
+                  -webkit-transition-delay: .2s;
+                     -moz-transition-delay: .2s;
+                      -ms-transition-delay: .2s;
+                       -o-transition-delay: .2s;
+                          transition-delay: .2s;
+                }
+              }
+            }
+          }
+
+          .portfolio-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: $secondary-color;
+            color: $quaternary-color;
+            padding: 15px;
+            overflow: hidden;
+            @include flex;
+            @include flex-row;
+            @include flex-space-between;
+            @include flex-align-center;
+            @include transition-03;
+
+            -webkit-transform: translateY(80px);
+               -moz-transform: translateY(80px);
+                -ms-transform: translateY(80px);
+                 -o-transform: translateY(80px);
+                    transform: translateY(80px);
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              right: -5%;
+              width: 0;
+              height: 220%;
+              background: $senary-color;
+              z-index: -1;
+              @include transition-05;
+
+              -webkit-transition-delay: .2s;
+                 -moz-transition-delay: .2s;
+                  -ms-transition-delay: .2s;
+                   -o-transition-delay: .2s;
+                      transition-delay: .2s;
+
+              -webkit-transform-origin: center top 0;
+                 -moz-transform-origin: center top 0;
+                  -ms-transform-origin: center top 0;
+                   -o-transform-origin: center top 0;
+                      transform-origin: center top 0;
+
+              -webkit-transform: rotate(-45deg);
+                 -moz-transform: rotate(-45deg);
+                  -ms-transform: rotate(-45deg);
+                   -o-transform: rotate(-45deg);
+                      transform: rotate(-45deg);
+            }
+
+            .portfolio-text {
+              h4 {
+                color: $quaternary-color;
+                font-weight: 400;
+                margin-top: 0;
+                margin-bottom: 5px;
+              }
+
+              p {
+                margin: 0;
+              }
+            }
+
+            .link-icons {
+
+              svg {
+                width: 20px;
+                height: 20px;
+                fill: $quaternary-color;
+                margin: 0 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

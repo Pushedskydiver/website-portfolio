@@ -1,0 +1,62 @@
+/*------------------------------------*\
+    #HEADER-STYLES
+\*------------------------------------*/
+
+header.site-header {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: rgba($white, 0.9);
+
+  -webkit-box-shadow: 3px -4px 9px 0px rgba($black,0.15);
+          box-shadow: 3px -4px 9px 0px rgba($black,0.15);
+
+  .main-header {
+    @include flex;
+    @include flex-row;
+    @include flex-space-between;
+    @include flex-align-center;
+
+    a.logo {
+      display: none;
+    }
+
+    nav.site-nav {
+      width: 100%;
+      margin: 0 auto;
+      @include flex;
+      @include flex-wrap;
+      @include flex-row;
+      @include flex-align-center;
+      @include flex-space-between;
+
+      a {
+        display: block;
+        position: relative;
+        width: 20%;
+        font-family: $heading-font;
+        color: $tertiary-color;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: center;
+        padding: 5px 0;
+
+        svg {
+          display: block;
+          fill: $tertiary-color;
+          margin: 0 auto;
+        }
+
+        span {
+          display: block;
+        }
+
+        &.active {
+          background: $senary-color;
+        }
+      }
+    }
+  }
+}

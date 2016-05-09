@@ -1,10 +1,15 @@
 @import "modules/typography";
 @import "modules/colors";
 @import "modules/mixins";
+@import "modules/svg-sprite";
+@import "modules/png-sprite";
 
 @import "vendor/animate";
 
-@import "partials/base";
 @import "partials/preloader";
+@import "partials/base";
+@import "partials/nav";
+@import "partials/banner";
+@import "partials/article";
 @import "partials/keyframes";
 @import "partials/queries";
