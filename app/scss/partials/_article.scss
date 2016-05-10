@@ -69,31 +69,43 @@ main.site-main {
     }
   }
 
-  section.site-skills {
-    position: relative;
-    padding: 60px 0;
+  section.site-skill-bars {
+    padding: 30px 0;
 
-    input.knob {
-      width: 91px;
-      height: 58px;
-      position: absolute;
-      vertical-align: middle;
-      margin-top: 58px;
-      margin-left: -133px;
-      border: 0px;
-      background-image: none;
-      font-weight: bold;
-      font-style: normal;
-      font-variant-caps: normal;
-      font-size: 35px;
-      line-height: normal;
-      font-family: Arial;
-      text-align: center;
-      color: rgb(255, 43, 66);
-      padding: 0px;
-      -webkit-appearance: none;
-      background-position: initial initial;
-      background-repeat: initial initial;
+    .skill-bars {
+
+      .skill-bar {
+        margin-bottom: 20px;
+
+        .skill-bar-title {
+          @include flex;
+          @include flex-wrap;
+          @include flex-row;
+          @include flex-space-between;
+
+          h4 {
+            font-family: $body-font;
+            color: $quaternary-color;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 5px;
+          }
+        }
+
+        .bar {
+          display: block;
+          position: relative;
+          height: 5px;
+          background: #eaeaea;
+
+          span {
+            position: absolute;
+            height: 5px;
+            background: $senary-color;
+            z-index: 5;
+          }
+        }
+      }
     }
   }
 
@@ -217,11 +229,11 @@ main.site-main {
               z-index: -1;
               @include transition-05;
 
-              -webkit-transition-delay: .2s;
-                 -moz-transition-delay: .2s;
-                  -ms-transition-delay: .2s;
-                   -o-transition-delay: .2s;
-                      transition-delay: .2s;
+              -webkit-transition-delay: .3s;
+                 -moz-transition-delay: .3s;
+                  -ms-transition-delay: .3s;
+                   -o-transition-delay: .3s;
+                      transition-delay: .3s;
 
               -webkit-transform-origin: center top 0;
                  -moz-transform-origin: center top 0;
@@ -256,6 +268,12 @@ main.site-main {
                 height: 20px;
                 fill: $quaternary-color;
                 margin: 0 5px;
+
+                -webkit-transition-delay: .3s;
+                   -moz-transition-delay: .3s;
+                    -ms-transition-delay: .3s;
+                     -o-transition-delay: .3s;
+                        transition-delay: .3s;
               }
             }
           }

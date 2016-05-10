@@ -134,6 +134,36 @@
 
 
     // ======================================
+    //    Progress bar loader function
+    // ======================================
+    function init_progress_bar_loader(){
+        jQuery('.skill-bar-progress').each(function(){
+          var el = this,
+              skillBars = $('.skill-bars');
+            skillBars.waypoint(function() {
+              if (jQuery(el).attr("processed")!="true"){
+                  jQuery(el).css("width","0%");
+                  jQuery(el).attr("processed","true");
+                  var val = parseInt(jQuery(el).attr("data-value"), 10);
+                  var fill = 0;
+                  var speed = val/100;
+                  var timer = setInterval(function (){
+                      if (fill<val){
+                          fill += 1;
+                          jQuery(el).css("width",String(fill)+"%");
+                          var ind = jQuery(el).parent().parent().find(".skill-bar-perc");
+                          jQuery(ind).text(fill+"%");
+                      }
+                  },(10/speed));
+              }
+            }, {
+                offset: "60%"
+            });
+        });
+    };
+
+
+    // ======================================
     //    Portfolio grid & filter
     // ======================================
     function init_portfolio() {
@@ -237,6 +267,7 @@
     // ==============================================
     init_dummy_link();
     init_scroll_to();
+    init_progress_bar_loader();
     init_portfolio();
     init_lightbox_options();
     init_contact();

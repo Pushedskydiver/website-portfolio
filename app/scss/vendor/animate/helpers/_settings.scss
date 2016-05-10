@@ -60,7 +60,7 @@ $use-zoom               :   $use-all !default; // all zoom animations
 // Fade Enter
 $use-fade-in            :   $use-fade !default;
 $use-fadeIn 			:	$use-fade-in !default;
-$use-fadeInUp 			:	$use-fade-in !default;
+$use-fadeInUp 			:	true !default;
 $use-fadeInUpBig 		:	$use-fade-in !default;
 $use-fadeInDown 		:	$use-fade-in !default;
 $use-fadeInDownBig 		:	$use-fade-in !default;

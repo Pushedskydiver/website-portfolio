@@ -1248,6 +1248,33 @@ body {
   animation-duration: 0.75s;
 }
 
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
 /*------------------------------------*    #PAGE-PRELOADER-STYLES
 \*------------------------------------*/
 .is-preloader {
@@ -1984,32 +2011,53 @@ main.site-main section.site-about .about-info a svg {
   padding: 6px;
 }
 
-main.site-main section.site-skills {
-  position: relative;
-  padding: 60px 0;
+main.site-main section.site-skill-bars {
+  padding: 30px 0;
 }
 
-main.site-main section.site-skills input.knob {
-  width: 91px;
-  height: 58px;
+main.site-main section.site-skill-bars .skill-bars .skill-bar {
+  margin-bottom: 20px;
+}
+
+main.site-main section.site-skill-bars .skill-bars .skill-bar .skill-bar-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+main.site-main section.site-skill-bars .skill-bars .skill-bar .skill-bar-title h4 {
+  font-family: "Open Sans", sans-serif;
+  color: #1E1E24;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+main.site-main section.site-skill-bars .skill-bars .skill-bar .bar {
+  display: block;
+  position: relative;
+  height: 5px;
+  background: #eaeaea;
+}
+
+main.site-main section.site-skill-bars .skill-bars .skill-bar .bar span {
   position: absolute;
-  vertical-align: middle;
-  margin-top: 58px;
-  margin-left: -133px;
-  border: 0px;
-  background-image: none;
-  font-weight: bold;
-  font-style: normal;
-  font-variant-caps: normal;
-  font-size: 35px;
-  line-height: normal;
-  font-family: Arial;
-  text-align: center;
-  color: #ff2b42;
-  padding: 0px;
-  -webkit-appearance: none;
-  background-position: initial initial;
-  background-repeat: initial initial;
+  height: 5px;
+  background: #FF2B42;
+  z-index: 5;
 }
 
 main.site-main section.site-portfolio {
@@ -2160,11 +2208,11 @@ main.site-main section.site-portfolio .portfolio-inner .grid .grid-item .portfol
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-  -webkit-transition-delay: .2s;
-  -moz-transition-delay: .2s;
-  -ms-transition-delay: .2s;
-  -o-transition-delay: .2s;
-  transition-delay: .2s;
+  -webkit-transition-delay: .3s;
+  -moz-transition-delay: .3s;
+  -ms-transition-delay: .3s;
+  -o-transition-delay: .3s;
+  transition-delay: .3s;
   -webkit-transform-origin: center top 0;
   -moz-transform-origin: center top 0;
   -ms-transform-origin: center top 0;
@@ -2193,6 +2241,11 @@ main.site-main section.site-portfolio .portfolio-inner .grid .grid-item .portfol
   height: 20px;
   fill: #1E1E24;
   margin: 0 5px;
+  -webkit-transition-delay: .3s;
+  -moz-transition-delay: .3s;
+  -ms-transition-delay: .3s;
+  -o-transition-delay: .3s;
+  transition-delay: .3s;
 }
 
 /*------------------------------------*    #KEYFRAMES
