@@ -1,13 +1,49 @@
 main.site-main {
 
   section.title-banner {
-    background: $quinary-color;
+    background: #f8f8f8;
     padding: 60px 0;
     text-align: center;
 
     h2 {
+      display: inline-block;
+      position: relative;
       color: $tertiary-color;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding-bottom: 25px;
+      margin: 0 0 30px 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 20%;
+        height: 1px;
+        background: $quaternary-color;
+        margin: 0 auto;
+
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -20%;
+        left: 0;
+        width: 30%;
+        height: 1px;
+        background: $quaternary-color;
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      color: #777;
       margin: 0;
     }
   }
@@ -15,13 +51,42 @@ main.site-main {
   section.site-about {
 
     .about-info {
-      background: $secondary-color url('../images/white-overlay.png');
-      color: $tertiary-color;
-      padding: 30px;
+      background: #fff;
+      color: #777;
+      padding: 40px;
+
+      &:last-child {
+        @include flex-self-center;
+      }
 
       h3 {
-        color: $senary-color;
+        display: inline-block;
+        position: relative;
+        color: $quaternary-color;
         font-weight: 400;
+        letter-spacing: 4px;
+        padding-bottom: 15px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 30%;
+          height: 1px;
+          background: $quaternary-color;
+
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -13%;
+          left: 0;
+          width: 40%;
+          height: 1px;
+          background: $quaternary-color;
+        }
       }
 
       p {
@@ -34,6 +99,7 @@ main.site-main {
       a {
         display: inline-flex;
         position: relative;
+        border: 1px solid $quaternary-color;
         @include flex-row;
         @include flex-align-center;
 
@@ -44,7 +110,7 @@ main.site-main {
           left: 0;
           width: 100%;
           height: 100%;
-          background: $senary-color;
+          background: $quaternary-color;
           @include transition-03;
           z-index: 0;
         }
@@ -52,8 +118,10 @@ main.site-main {
         span {
           display: inline-block;
           position: relative;
-          color: $secondary-color;
-          font-weight: 600;
+          font-family: $heading-font;
+          color: $white;
+          font-size: 0.8rem;
+          font-weight: 400;
           padding: 12px;
           vertical-align: middle;
         }
@@ -62,47 +130,46 @@ main.site-main {
           position: relative;
           width: 40px;
           height: 40px;
-          fill: $secondary-color;
+          fill: $white;
           padding: 6px;
         }
       }
-    }
-  }
 
-  section.site-skill-bars {
-    padding: 30px 0;
+      .site-skill-bars {
 
-    .skill-bars {
+        .skill-bars {
 
-      .skill-bar {
-        margin-bottom: 20px;
+          .skill-bar {
+            margin-bottom: 15px;
 
-        .skill-bar-title {
-          @include flex;
-          @include flex-wrap;
-          @include flex-row;
-          @include flex-space-between;
+            .skill-bar-title {
+              @include flex;
+              @include flex-wrap;
+              @include flex-row;
+              @include flex-space-between;
 
-          h4 {
-            font-family: $body-font;
-            color: $quaternary-color;
-            font-weight: 400;
-            margin: 0;
-            margin-bottom: 5px;
-          }
-        }
+              h4 {
+                font-family: $body-font;
+                color: $quaternary-color;
+                font-weight: 400;
+                margin: 0;
+                margin-bottom: 5px;
+              }
+            }
 
-        .bar {
-          display: block;
-          position: relative;
-          height: 5px;
-          background: #eaeaea;
+            .bar {
+              display: block;
+              position: relative;
+              height: 4px;
+              background: #eaeaea;
 
-          span {
-            position: absolute;
-            height: 5px;
-            background: $senary-color;
-            z-index: 5;
+              span {
+                position: absolute;
+                height: 4px;
+                background: $quaternary-color;
+                z-index: 5;
+              }
+            }
           }
         }
       }
@@ -110,7 +177,7 @@ main.site-main {
   }
 
   section.site-portfolio {
-    background: $secondary-color url('../images/white-overlay.png');
+    background: $white;
     padding: 60px 0;
 
     .portfolio-inner {
@@ -126,20 +193,16 @@ main.site-main {
         margin-bottom: 20px;
 
         button {
-          background: $tertiary-color;
-          color: $secondary-color;
+          background: $white;
+          color: $quaternary-color;
           padding: 10px 16px;
           margin: 0;
-          border-right: 1px solid $quaternary-color;
+          border: 1px solid #e0e0e0;
           @include transition-03;
 
-          &:last-child {
-            border-right: none;
-          }
-
           &.is-checked {
-            background: $senary-color;
-            color: $secondary-color;
+            background: $quaternary-color;
+            color: $white;
           }
         }
       }
@@ -275,6 +338,115 @@ main.site-main {
                      -o-transition-delay: .3s;
                         transition-delay: .3s;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.site-blog {
+    background: $white;
+    padding: 60px 0;
+
+    .flex-container {
+
+      .blog-item {
+        margin-bottom: 50px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .blog-img {
+          position: relative;
+
+          img {
+            width: 100%;
+          }
+
+          .blog-date {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            background: rgba($white, 0.9);
+            color: #3e3e3e;
+            text-align: center;
+            padding: 10px 20px;
+
+            p {
+              margin: 0;
+
+              span {
+                display: block;
+                color: $quaternary-color;
+                font-size: 1.7rem;
+                font-weight: 300;
+                line-height: 1;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+
+        .blog-info {
+
+          .blog-meta {
+
+            p {
+              color: #999;
+
+              svg {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                fill: #999;
+                vertical-align: middle;
+              }
+
+              span {
+                display: inline-block;
+                vertical-align: middle;
+
+                a {
+                  color: #333;
+                }
+              }
+            }
+          }
+
+          h3 {
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+
+            a {
+              color: $quaternary-color;
+            }
+          }
+
+          p {
+            color: #777;
+            margin: 20px 0;
+          }
+
+          .blog-btn {
+            background: $white;
+            font-family: $heading-font;
+            color: #777;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 15px 0;
+
+            svg {
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              margin-left: -5px;
+              vertical-align: middle;
             }
           }
         }

@@ -65,7 +65,7 @@ h2 {
   width: auto;
   font-family: $heading-font;
   color: $primary-color;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0 0 10px 0;
@@ -217,6 +217,14 @@ svg {
           transition-delay: 1.2s;
 }
 
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+
 
 
 
@@ -358,7 +366,7 @@ svg {
     svg {
       width: 45px;
       height: 50px;
-      fill: $quinary-color;
+      fill: $white;
     }
   }
 }
